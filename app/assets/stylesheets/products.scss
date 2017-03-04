@@ -36,7 +36,6 @@ h6 {
 h2 {
     font-size: 4em;
     font-weight: 700;
-    padding-bottom: 1em;
     text-align: center;
 }
 h3 {
@@ -44,20 +43,18 @@ h3 {
     font-weight: 200;
     text-transform: uppercase;
     text-align: center;
-    padding-bottom: 1em
 }
 h4 {
-    font-size: 2.5em;
+    font-size: 1em;
     font-weight: 700;
     line-height: 30px;
-    padding: 1em 0
+    text-align: center
 }
 p {
-    font-size: 2em;
+    font-size: 1em;
     font-family: 'Raleway', sans-serif;
     font-weight: 200;
     line-height: 30px;
-    padding: 0.5em 0;
     text-align: center
 }
 
@@ -82,17 +79,29 @@ h1 {
 
 .my-image {
       display: block; 
-      padding-bottom: 60px; 
       margin: auto; 
-      max-width: 200px; 
       position: relative
 }
+.product-image {
+    width:150px;
+    position: relative;
+    margin: auto; 
+}
 
+.row {
+    text-align: center
+}
 
 .text-muted {
   margin: 0 0 0 20px;
 }
 
+a:visited {
+    color: #fff;
+}
+a:hover {
+    background-color: #fff;
+}
 
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/

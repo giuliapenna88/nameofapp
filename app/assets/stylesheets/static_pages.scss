@@ -8,7 +8,7 @@ html {
     height: 100%
 }
 body {
-    font-size: 10px;
+    font-size: 12px;
     font-family: 'Raleway', sans-serif;
     padding: 0;
     margin: 0;
@@ -34,26 +34,26 @@ h6 {
     margin-bottom: 0
 }
 h2 {
-    font-size: 4em;
+    font-size: 3em;
     font-weight: 700;
     padding-bottom: 1em;
     text-align: center;
 }
 h3 {
-    font-size: 2.5em;
+    font-size: 1.5em;
     font-weight: 200;
     text-transform: uppercase;
     text-align: center;
     padding-bottom: 1em
 }
 h4 {
-    font-size: 2.5em;
+    font-size: 1em;
     font-weight: 700;
     line-height: 30px;
     padding: 1em 0
 }
 p {
-    font-size: 2em;
+    font-size: 1em;
     font-family: 'Raleway', sans-serif;
     font-weight: 200;
     line-height: 30px;
@@ -156,7 +156,6 @@ h1 {
       position: relative
 }
 .footer {
-  position: absolute;
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
@@ -166,6 +165,12 @@ h1 {
 
 .text-muted {
   margin: 0 0 0 20px;
+}
+a:visited {
+    color: #000;
+}
+a:hover {
+    background-color: #fff;
 }
 
 // They will automatically be included in application.css.
