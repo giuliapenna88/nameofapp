@@ -20,12 +20,27 @@
 <%= image_tag("work.png", class: "img-responsive my-image") %>
 
 <div class="container">
-	<div class="pad-top">
-  <h1>Featured Products</h1>
-</div>
-  <div class="row pad-top">
-    <%= @featured_product.name %>
-
+      <div class="">
+    <h2> Our Products</h2>
   </div>
+  <div class="row pad-top">
+    <% @products.each do |product| %>
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <h3><%= product.name %></h3>
+         <%= if(product.image_url != nil && product.image_url != "" )
+            link_to(image_tag(product.image_url, class: "img-responsive product-image"), product)
+          else 
+            "No image."
+          end %>
+        <p><%= product.description %><br>
+        <%= product.colour %><br>
+        <%= product.price %><br>
+        <%= link_to 'Show', product %>
+        <%= link_to 'Edit', edit_product_path(product) %>
+        <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      </div><!-- /col -->
+    <% end %>
+  </div>
+    <h3><%= link_to 'Creat new product', new_product_path %></h3>
 </div>
 </table>
