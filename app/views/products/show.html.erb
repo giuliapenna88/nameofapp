@@ -1,31 +1,40 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
+    <section>
 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
+      <div class="container pad-top pad-bottom" >
+        <div class="row margin-sides">
+          <div class="col-md-12 col-sm-12">
+            <h2 class="text-center"><%= @product.name %>
+            </h2>
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12 pad-top">
+           <div class='inner-item img-responsive img-fluid'>
 
-<p>
-  <strong>Image url:</strong>
-  
-  <%= @product.image_url %>
-</p>
+    <div>
+      <img src="<%= image_path(@product.image_url) %>" width="350px" alt=""
+           data-zoom-image = "<%= image_path("large/" + @product.image_url) %>"
+           class="thumbnail image-zoom img-responsive">
+        </div>
 
-<p>
-  <strong>Colour:</strong>
-  <%= @product.colour %>
-</p>
+          </div>
+        </div>
+          <div class="col-lg-6 col-md-12 col-sm-12 pad-top">
+            <h3 class="pad-top"><strong>Description: </strong><%= @product.description %>
+            </h3>
+            <h3>
+             <strong>Colour available: </strong><%= @product.colour %>
+            </h3>
+            <h3 class="">
+              
+              <strong>Price: </strong><%= @product.price %> &euro;
+            </h3>
+            <p class="">
+              
+              <%= link_to 'Edit', edit_product_path(@product) %> |
+            <%= link_to 'Back', products_path %>
+            </p>
+        
+          </div>
 
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
-<p>
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
-</p>
+      </div>
+    </section>

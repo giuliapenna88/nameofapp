@@ -51,7 +51,7 @@ h4 {
     text-align: center
 }
 p {
-    font-size: 1em;
+    font-size: 1.5em;
     font-family: 'Raleway', sans-serif;
     font-weight: 200;
     line-height: 30px;
@@ -103,5 +103,106 @@ a:hover {
     background-color: #fff;
 }
 
+@media (min-width: 768px) and (max-width: 979px) {
+    body,
+    p {
+        text-align: center
+    }
+    h2 {
+        padding-top:20px;
+        text-align: center
+    }
+    .header-caption {
+        top: 30%
+    }
+    .carousel-indicators {
+        top: 50%
+    }
+    .carousel-caption {
+    top: 40%
+    }
+    .inner-item img {
+      max-width: 150px; 
+    }
+}
+
+@media (max-width: 767px) {
+    body,
+    h3,
+    p {
+        text-align: center
+    }
+    h2 {
+        padding-top:20px;
+        text-align: center
+    }
+    h1{
+        padding-top:20px
+    }
+    .container {
+        width: 80%
+    }
+    #contact {
+        padding-right: 10%;
+        padding-left: 10%
+    }
+    .header-caption {
+        top: 30%;
+        font-size: 62.5%
+    }
+    .inner-item img {
+      max-width: 150px; 
+    }
+        .carousel-caption {
+        top: 30%;
+    }
+}
+@media (max-width: 480px) {
+    body,
+    h3,
+    p {
+        text-align: center
+    }
+    h2 {
+        padding-top:20px;
+        text-align: center
+    }
+    .container {
+        width: 90%
+    }
+    #contact {
+        padding-right: 5%;
+        padding-left: 5%
+    }
+    .header-caption {
+        top: 30%
+    }
+    .header-caption h2 {
+        font-weight: 800;
+        text-transform:uppercase
+    }
+    .carousel-caption {
+        top: 60%;
+    }
+    .about {
+        text-align: center;
+    }
+    #copywright {
+        width: 100%;
+        text-align: center
+    }
+    #fb-button {
+        width: 50%;
+        float: left
+    }
+    #twitter-button {
+        ;
+        float: right;
+        width: 50%;
+    }
+    .inner-item img {
+        width: 80%;
+    }
+}
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
