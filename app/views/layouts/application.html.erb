@@ -35,6 +35,12 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li class="">
+              <%= form_tag("/products", method: "get") do %>
+                  <%= text_field_tag(:q) %>
+                  <%= submit_tag("Search") %>
+                <% end %> 
+            </li>
+            <li class="">
               <%= link_to "Products", products_path %>
             </li>
             <li class="">

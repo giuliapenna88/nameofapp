@@ -2,11 +2,50 @@
 
 	<h1>Fahrradkit Berlin</h1>
 </div>
-<div class="pad-top">
 
-	<h3>Choriner Str, Berlin	</h3>
-</div>
-<div class="pad-bottom-double pad-bottom-extra">
+   <div data-stellar-background-ratio="0.5">
+    <section class="contact" id="contact" data-parallax="scroll" data-image-src="img/kitten.jpg">
 
-<h3>giulia@fahrradkit.com</h3>
-</div>
+      <div class="container pad-top-double pad-bottom" >
+        <div class="row margin-sides">
+          <div class="col-lg-6 col-md-12 col-sm-12 pad-top">
+            <h3 class="">Get in touch
+            </h3>
+            <p>
+              <span class="glyphicon glyphicon-envelope">
+              </span>
+              giuliapenna88@gmail.com <br><br>
+           
+              <span class="glyphicon glyphicon-phone">
+              </span>
+              +49 176 32972785 <br><br>
+            
+              <span class="glyphicon glyphicon-map-marker">
+              </span>
+              Choriner Str. 43
+              10435 Berlin
+            </p>
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12 pad-top">
+            <h3 class="">Send me a message
+            </h3> 
+            <form method='post'>
+              <input type='hidden' name='form-name' value='form 1' />
+              <div class="form-group">
+					  	  <%= text_field_tag :name, nil, class: "form-control", placeholder: "Your name *" %>              
+              <div class="form-group">
+  	  					<%= text_field_tag :email, nil, class: "form-control", placeholder: "Your email *", required: "true" %>
+              </div>
+              <div class="form-group">
+                <!--<label class="label-font" for="email">Message *</label>-->
+                
+ 								<%= text_area_tag :message, nil, class: "form-control message-box", placeholder: "Your message *", required:"true" %>
+              </div>
+               	<%= submit_tag "Send", class:'btn btn-default' %>
+               	
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
