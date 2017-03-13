@@ -37,7 +37,7 @@
             <li class="">
               <%= form_tag("/products", method: "get") do %>
                   <%= text_field_tag(:q) %>
-                  <%= submit_tag("Search") %>
+                  <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                 <% end %> 
             </li>
             <li class="">
