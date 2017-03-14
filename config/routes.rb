@@ -5,9 +5,11 @@ Rails.application.routes.draw do
 
   get 'static_pages/about', to: 'static_pages#about'
 
-  post 'static_pages/contact', to: 'static_pages#contact'
+  get 'static_pages/contact', to: 'static_pages#contact'
 
   get 'static_pages/index', to: 'static_pages#index'
+
+  post 'static_pages/thank_you', to: 'static_pages#thank_you'
 
   root 'static_pages#homepage'
 

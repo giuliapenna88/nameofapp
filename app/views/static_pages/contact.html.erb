@@ -3,8 +3,8 @@
 	<h1>Fahrradkit Berlin</h1>
 </div>
 
-   <div data-stellar-background-ratio="0.5">
-    <section class="contact" id="contact" data-parallax="scroll" data-image-src="img/kitten.jpg">
+
+    <section class="contact" id="contact">
 
       <div class="container pad-top-double pad-bottom" >
         <div class="row margin-sides">
@@ -26,6 +26,8 @@
               10435 Berlin
             </p>
           </div>
+<%= flash[:notice] %>
+<%= form_tag("/static_pages/thank_you") do %>
           <div class="col-lg-6 col-md-12 col-sm-12 pad-top">
             <h3 class="">Send me a message
             </h3> 
@@ -42,10 +44,11 @@
  								<%= text_area_tag :message, nil, class: "form-control message-box", placeholder: "Your message *", required:"true" %>
               </div>
                	<%= submit_tag "Send", class:'btn btn-default' %>
-               	
+
             </form>
           </div>
+<% end %>
         </div>
       </div>
     </section>
-  </div>
+
