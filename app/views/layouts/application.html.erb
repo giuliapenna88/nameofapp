@@ -34,12 +34,7 @@
         <!-- end navbar-header -->
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li class="">
-              <%= form_tag("/products", method: "get") do %>
-                  <%= text_field_tag(:q) %>
-                  <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                <% end %> 
-            </li>
+
             <li class="">
               <%= link_to "Products", products_path %>
             </li>
@@ -49,14 +44,34 @@
             <li class="">
               <%= link_to "Contact", static_pages_contact_path %>
             </li>
-
+            <li>
+            <% if user_signed_in? %>
+              <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+            <% else %>
+              <%= link_to('Login', new_user_session_path) %>
+            <% end %>
+            </li>
           </ul>
-        </div>  
+
+        </div> 
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+              <li class="">
+              <%= form_tag("/products", method: "get") do %>
+                  <%= text_field_tag(:q) %>
+                  <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                <% end %> 
+            </li>
+          </ul> 
+         </div> 
       </div> 
       <!-- end navbar container -->
     </nav> 
     <!-- end navbar -->
-
+   <!-- flash notice -->
+       <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+    <!-- flash notice -->
 		<%= yield %>
     <footer class="footer">
       <div>
