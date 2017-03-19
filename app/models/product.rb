@@ -1,7 +1,10 @@
 class Product < ApplicationRecord
   has_many :orders
   has_many :comments
+<<<<<<< HEAD
 
+=======
+>>>>>>> comment
   def self.search(search_term)
       app_name = "redacted"
       if Rails.env.development?
@@ -12,8 +15,13 @@ class Product < ApplicationRecord
     end
     def highest_rating_comment
       comments.rating_desc.first
+<<<<<<< HEAD
+=======
+    end   
+    def average_rating
+      comments.average(:rating).to_f
+>>>>>>> comment
     end
 end
-
 
 		
