@@ -14,6 +14,11 @@ a:hover {
     /* color: #000; */
 }
 
+h3 {
+    font-size: 2em;
+    padding-top: 1em;
+}
+
 .remember {
     color: #000;
     font-size: 0.7em;
@@ -35,7 +40,21 @@ input[type=checkbox], input[type=radio] {
     padding-top: 0em;
     padding-bottom: 8em;
 }
-
+.pad-top {
+    padding-top: 4em
+}
+.pad-bottom {
+    padding-bottom: 4em
+}
+.pad-top-double {
+    padding-top: 8em
+}
+.pad-bottom-double {
+    padding-bottom: 8em
+}
+.pad-bottom-extra {
+    padding-bottom: 28em
+}
 @media (max-width: 979px) and (min-width: 768px)
 {
 h2 {

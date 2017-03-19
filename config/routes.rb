@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 	
   devise_for :users
+  resources :products do
+    resources :comments
+  end
   resources :users
-  resources :products
   resources :orders, only: [:index, :show, :create, :destroy]
 
   get 'static_pages/about', to: 'static_pages#about'
@@ -17,6 +19,7 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
+
 
 
 
