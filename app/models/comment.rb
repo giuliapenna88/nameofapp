@@ -4,8 +4,4 @@ class Comment < ApplicationRecord
   scope :rating_desc, -> { order(rating: :desc) }
 
 end
-<<<<<<< HEAD
-=======
 
-
->>>>>>> comment

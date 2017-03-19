@@ -64,6 +64,11 @@ h1 {
     font-family: 'Open Sans', sans-serif;
     text-align: center;
 }
+.form-group {
+    font-size: 1em;
+    padding-top: 1em;
+    text-align: center
+}
 .pad-top {
     padding-top: 4em
 }
@@ -101,6 +106,10 @@ a:visited {
 }
 a:hover {
     background-color: #fff;
+}
+.comments {
+  width: 100%;
+  background-color: #f5f5f5;
 }
 
 @media (min-width: 768px) and (max-width: 979px) {
