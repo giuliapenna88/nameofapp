@@ -122,6 +122,15 @@ h1 {
   .pagination .next_page {
     margin-left: 1em; }
 
+.glyphicon {
+    font-size: 0.5em;
+    text-align: center;
+    display: inline
+}
+.pagination a {
+    border: 0px
+}
+
 .row {
     text-align: center
 }
