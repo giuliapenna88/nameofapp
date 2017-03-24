@@ -10,12 +10,21 @@
           end %>
         <p><%= product.description %><br>
         <%= product.colour %><br>
-        <%= product.price %> &euro;<br>
-        <%= link_to 'Show', product %>
-        <%= link_to 'Edit', edit_product_path(product) %>
-        <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+        <%= product.price %> &euro;<br></p>
+        <%= link_to 'Show', product, class:'btn btn-default'%>
+        <p><% if signed_in? && current_user.admin? %>
+           <%= link_to 'Edit', edit_product_path(product) %>
+        <% end %>  
+        <% if signed_in? && current_user.admin? %>
+          <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+        </p>
       </div><!-- /col -->
     <% end %>
   </div>
-    <h3><%= link_to 'Creat new product', new_product_path %></h3>
+
+        <% if signed_in? && current_user.admin? %>
+           <h3><%= link_to 'Creat new product', new_product_path %></h3>
+        <% end %>
 </div>
+
