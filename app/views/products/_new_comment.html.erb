@@ -1,19 +1,16 @@
-<% if signed_in? %>
-  <h3>Add a review:</h3>
-
-  <div class="field form-group">
-  <div class="field form-group">
-  
-  <%= form_for([@product, @product.comments.build]) do |f| %>
-      <%= f.text_area :body, class: "form-control", placeholder: "Your Comment" %>
-  </div>
-  <div class="pad-bottom">
-       <%= f.text_field :rating, class: "rating" %>
-
-  </div>
-
-      <%= f.submit "Submit", class: "btn btn-primary btn-block", type: "submit"  %>
+<div>
+  <% if signed_in? %>
+    <h2>Add a review:</h2>
+    <%= form_for([@product, @product.comments.build], remote: true) do |f| %>
+      <div class="form-group pad-bottom">
+        <%= f.text_area :body, class: 'form-control', placeholder: 'Enter comment here' %>
+      </div>
+      <div>
+        <div class="rating"></div>
+      </div>
+      <div class="pad-top">
+        <%= f.submit "Submit", class: 'btn btn-default' %>
+      </div>
+    <% end %>    
   <% end %>
 </div>
-<% end %>
-

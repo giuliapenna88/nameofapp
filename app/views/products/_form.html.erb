@@ -1,5 +1,5 @@
+  <div class="field form-group pad-top">
 
-<<<<<<< HEAD
 <%= form_for(@product) do |f| %>
     <% if @product.errors.any? %>
         <div id="error_explanation">
@@ -13,38 +13,27 @@
         </div>
     <% end %>
 
-    <div class="field">
-      <%= f.label :name %><br>
-      <%= f.text_field :name %>
+    <div class="form-group field">
+      <%= f.text_field :name, class: "form-control", placeholder: "name"  %>
     </div>
-    <div class="field">
-      <%= f.label :description %><br>
-      <%= f.text_area :description %>
+    <div class="form-group field">
+      <%= f.text_area :description, class: "form-control", placeholder: "description"  %>
     </div>
-    <div class="field">
-      <%= f.label :image_url %><br>
-      <%= f.text_field :image_url %>
+    <div class="form-group field">
+      <%= f.text_field :image_url, class: "form-control", placeholder: "image_url" %>
     </div>
-    <div class="field">
-      <%= f.label :colour %><br>
-      <%= f.text_field :colour %>
+    <div class="form-group form field">
+      <%= f.text_field :colour, class: "form-control", placeholder: "color" %>
     </div>
-    <div class="field">
-      <%= f.label :price %><br>
-      <%= f.text_field :price %>
-=======
-    <div class="form-group">
-      <%= f.label :image_url %>
-      <%= f.text_field :image_url, class: 'form-control' %>
+    <div class="form-group form field">
+      <%= f.text_field :price, class: "form-control", placeholder: "price" %>
     </div>
-
-    <div class="form-group">
-      <%= f.label :price %>
-      <%= f.text_field :price, class: 'form-control' %>
->>>>>>> comment
-    </div>
-    <div class="actions">
-      <%= f.submit %>
+    <div class: "btn btn-primary btn-block">
+      <%= f.submit "Create product", class: "btn btn-primary btn-block", type: "submit" %>
     </div>
 
 <% end %>
+
+
+  <%= link_to 'Back', products_path %>
+    </div>
