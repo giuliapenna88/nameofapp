@@ -3,4 +3,7 @@ class UserMailerPreview < ActionMailer::Preview
   def contact_form
     UserMailer.contact_form("giuliapenna88@gmail.com", "Giulia", "Hi, this is just a test! I am in user_mailer_preview :)")
   end
+  def welcome_email
+    UserMailer.welcome_email(User.first)
+  end
 end
