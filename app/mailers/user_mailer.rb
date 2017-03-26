@@ -1,5 +1,5 @@
 class UserMailer < ApplicationMailer
-  default from: "giulia@fahrradkit.com"
+  default from: "giuliapenna88@gmail.com"
 
   def contact_form(email, name, message)
   @message = message
@@ -8,8 +8,8 @@ class UserMailer < ApplicationMailer
         :subject => "A new contact form message from #{name}")
   end
   def welcome_email(user)
-    @user = user
-    @url  = 'http://example.com/login'
-    mail(to: @user.email, subject: 'Welcome to My Awesome Site')
-  end
+  @user = user
+   mail( :to => @user.email,
+   :subject => 'Thanks for signing up for our amazing app' )
+ end
 end

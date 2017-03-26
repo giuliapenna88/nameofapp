@@ -31,7 +31,7 @@ class UsersController < ApplicationController
       respond_to do |format|
         if @user.save
           # Tell the UserMailer to send a welcome email after save
-          UserMailer.welcome_email(@user).deliver_now
+          UserMailer.welcome_email(@user).deliver
 
           format.html { redirect_to(@user, notice: 'User was successfully created.') }
           format.json { render json: @user, status: :created, location: @user }
@@ -41,7 +41,7 @@ class UsersController < ApplicationController
         end
       end
     end
-
+      
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
