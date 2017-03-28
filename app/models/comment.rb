@@ -13,4 +13,3 @@ class Comment < ApplicationRecord
   	redirect_to product
 	end
 end
-
