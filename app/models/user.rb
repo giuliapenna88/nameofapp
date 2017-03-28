@@ -5,4 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
     has_many :orders
   # ...
+  after_create :send_welcome_mail
+    def send_welcome_mail
+       Contact.welcome_email(self.email, self.name).deliver
+    end
 end
