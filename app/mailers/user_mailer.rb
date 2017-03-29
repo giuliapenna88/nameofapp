@@ -1,5 +1,5 @@
 class UserMailer < ApplicationMailer
-	default from: "giuliapenna88@gmail.com"
+	default from: "giulia@fahrradkit.com"
 
 	def contact_form(email, name, message)
 		@message = message
@@ -10,6 +10,6 @@ class UserMailer < ApplicationMailer
 	def welcome_email(user)
 		@user = user
 		mail( :to => @user.email,
-		:subject => 'Thanks for signing up for our amazing app' )
+		:subject => 'Welcome to Fahrradkit!' )
 	end
 end
