@@ -5,16 +5,16 @@
         <h3><%= product.name %></h3>
          <%= if(product.image_url != nil && product.image_url != "" )
             link_to(image_tag(product.image_url, class: "img-responsive product-image"), product)
-          else 
+          else
             "No image."
           end %>
         <p><%= product.description %><br>
         <%= product.colour %><br>
-        <%= product.price %> &euro;<br></p>
+        <%= product.price * 0.01 %> &euro;<br></p>
         <%= link_to 'Show', product, class:'btn btn-default'%>
         <p><% if signed_in? && current_user.admin? %>
            <%= link_to 'Edit', edit_product_path(product) %>
-        <% end %>  
+        <% end %>
         <% if signed_in? && current_user.admin? %>
           <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
         <% end %>
@@ -27,4 +27,3 @@
            <h3><%= link_to 'Creat new product', new_product_path %></h3>
         <% end %>
 </div>
-
