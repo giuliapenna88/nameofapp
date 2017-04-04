@@ -3,8 +3,10 @@ class ProductsController < ApplicationController
 
 	# GET /products
 	# GET /products.json
+	load_and_authorize_resource
 
 	def index
+		
 		if params[:q]
 			search_term = params[:q]
 			@products = Product.search(search_term)
