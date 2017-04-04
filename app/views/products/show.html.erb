@@ -24,9 +24,14 @@
               <strong>Price: </strong><%= number_to_currency@product.price * 0.01%> &euro;
             </h3>
             <p>
-            <%= form_tag "/payments/create" do %>
-              <%= render partial: "shared/stripe_checkout_button" %>
-            <% end %>
+            
+
+            <% if user_signed_in? %>
+          <%= form_tag "/payments/create" do %>
+            <%= render partial: "shared/stripe_checkout_button" %>
+          <% end %>
+        <% end %>
+
             </p>
             <p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
             <p class="">
