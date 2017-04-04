@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
 	load_and_authorize_resource
 
 	def index
-		
+
 		if params[:q]
 			search_term = params[:q]
 			@products = Product.search(search_term)

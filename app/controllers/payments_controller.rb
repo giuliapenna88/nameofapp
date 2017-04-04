@@ -7,13 +7,14 @@ class PaymentsController < ApplicationController
 		begin
 			charge = Stripe::Charge.create(
 				:amount => @product.price*100, # amount in cents, again
-				:currency => "usd",
+				:currency => "eur",
 				:source => token,
 				:description => params[:stripeEmail]
 			)
 
 			if charge.paid
 				Order.create(product_id: @product.id, user_id: @user.id, total: @product.price)
+				redirect_to thanks_path
 			end
 
 		rescue Stripe::CardError => e
@@ -24,4 +25,9 @@ class PaymentsController < ApplicationController
 			redirect_to product_path(product)
 		end
 	end
+  def thanks
+
+  end
+
+
 end
