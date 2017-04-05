@@ -8,7 +8,8 @@ var refreshRating = function() {
   });
 };
 
-$(document).on('turbolinks:load', function () {  $('.img_zoom').ezPlus({
+$(document).ready(function(){
+    $('.img_zoom').ezPlus({
     zoomType: "lens",
     lensShape : "round",
     lensSize    : 200
