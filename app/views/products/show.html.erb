@@ -5,9 +5,11 @@
 
     <div class="col-lg-6 col-md-12 col-sm-12 pad-top">
     <div class='inner-item img-responsive img-fluid'>
-      <div class="image">
-  	     <%= image_tag(@product.image_url, class: "img-responsive img-zoom", data_zoom_image: "@product.image_url") %>
-    		</div>
+      <div class="image img-zoom">
+        <%= image_tag(@product.image_url, class: "img-responsive img_zoom", data_zoom_image: "@product.image_url") if @product.image_url %>
+
+        </div>
+
 
           </div>
         </div>
