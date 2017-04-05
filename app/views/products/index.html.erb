@@ -13,6 +13,7 @@
       <th colspan="3"></th>
     </tr>
   </thead%>
-<%= render partial: 'product' %>
-
+<% cache(cache_key_for_products) do %>
+    <%= render partial: 'product' %>
+<% end %>
 </table>

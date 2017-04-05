@@ -1,6 +1,8 @@
 <div class="container pad-top pad-bottom" >
+  <% cache @product do %>
     <h2 class="text-center"><%= @product.name %>
     </h2>
+    <% end %>
   <div class="row margin-sides">
 
     <div class="col-lg-6 col-md-12 col-sm-12 pad-top">
