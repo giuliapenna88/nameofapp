@@ -5,11 +5,9 @@
 
     <div class="col-lg-6 col-md-12 col-sm-12 pad-top">
     <div class='inner-item img-responsive img-fluid'>
-    <div>
-      <img src="<%= image_path(@product.image_url) %>" width="350px" alt=""
-           data-zoom-image = "<%= image_path("large/" + @product.image_url) %>"
-           class="thumbnail image-zoom img-responsive">
-        </div>
+      <div class="image">
+  	     <%= image_tag(@product.image_url, class: "img-responsive img-zoom", data_zoom_image: "@product.image_url") %>
+    		</div>
 
           </div>
         </div>
@@ -24,7 +22,7 @@
               <strong>Price: </strong><%= number_to_currency@product.price * 0.01%> &euro;
             </h3>
             <p>
-            
+
 
             <% if user_signed_in? %>
           <%= form_tag "/payments/create" do %>
