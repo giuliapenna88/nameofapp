@@ -10,8 +10,7 @@ FactoryGirl.define do
     id
     name
     description
-    image_url "dvd.png"
-    mediums "Download"
+    image_url "bike_light.png"
     price "10000"
   end
 
