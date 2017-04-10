@@ -14,5 +14,5 @@ sequence(:email) { |n| "user#{n}@example.com" }
     first_name "Admin"
     last_name "User"
   end
-  
+
 end
