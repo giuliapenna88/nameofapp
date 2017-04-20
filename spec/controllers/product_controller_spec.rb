@@ -2,42 +2,31 @@ require 'rails_helper'
 
 describe ProductsController, :type => :controller do
 
-  before do
-    @admin = FactoryGirl.create(:admin_user)
-    @product = FactoryGirl.create(:product)
-  end
+      let (:admin) {FactoryGirl.create(:admin_user)}
+      let (:product) {FactoryGirl.create(:product)}
 
-  describe "GET #index" do
-      before do
-        @product = FactoryGirl.create(:product)
-      end
+    describe "GET #index" do
+      subject {get :index}
+        it "all products are shown" do
+          expect(response).to have_http_status(200)
+          expect(assigns(:products)).to eq Product.all
+        end
 
-      it "all products are shown" do
-        get :index
-
-        expect(response).to have_http_status(200)
-        expect(assigns(:products)).to eq Product.all
-      end
-
-      it 'renders the :index view' do
-        get :index
-        expect(response).to render_template :index
-      end
-
-  end
-
-  describe "GET #show" do
-
-    it "correct Product is shown" do
-      get :show, params:{id: @product.id}
-
-      expect(response).to have_http_status(200)
-      expect(assigns(:product)).to eq @product
+        it 'renders the :index view' do
+          expect(response).to render_template :index
+        end
 
     end
 
-    it 'renders the #show view' do
-      get :show, params:{id: @product.id}
+    describe "GET #show" do
+      subject {get :show, params:{id: product.id}}
+      it "correct Product is shown" do
+        expect(response).to have_http_status(200)
+        expect(assigns(:product)).to eq product
+
+    end
+
+      it 'renders the #show view' do
       expect(response).to render_template :show
     end
 
@@ -49,8 +38,8 @@ describe ProductsController, :type => :controller do
       sign_in @admin
     end
 
+    subject {get :new}
     it 'renders the :new view' do
-      get :new
       expect(response).to have_http_status(200)
       expect(response).to render_template :new
     end
@@ -62,9 +51,9 @@ describe ProductsController, :type => :controller do
     before do
       sign_in @admin
     end
+    subject {get :edit, params:{id: product.id}}
 
     it 'renders the #edit template' do
-      get :edit, params:{id: @product.id}
 
       expect(response).to have_http_status(200)
       expect(response).to render_template :edit
@@ -80,12 +69,12 @@ describe ProductsController, :type => :controller do
 
     context 'Sending valid data' do
 
+      subject {post :create, product: FactoryGirl.attributes_for(:product)}
       it 'creates a new product' do
-        expect{post :create, product: FactoryGirl.attributes_for(:product)}.to change(Product, :count).by(1)
+      expect{subject}.to change(Product, :count).by(1)
       end
 
       it 'redirects to products#index' do
-        post :create, product: FactoryGirl.attributes_for(:product)
         expect(response).to have_http_status(302)
         expect(response).to redirect_to(product_path(Product.last))
       end
@@ -96,29 +85,26 @@ describe ProductsController, :type => :controller do
 
   describe 'PUT #update' do
 
+
     before do
       sign_in @admin
     end
 
     context 'valid attributes' do
+      let (:product_name) {FactoryGirl.attributes_for(:product)[:name]}
+      subject {put :update, id: product, product: FactoryGirl.attributes_for(:product), name: product_name)}
 
       it 'located the requested @product' do
-        put :update, id: @product, product: FactoryGirl.attributes_for(:product)
-        expect(assigns(:product)).to eq(@product)
+        expect(assigns(:product)).to eq(product)
       end
 
-      it 'changes attributes of @product' do
-        put :update, id: @product, product:\
-        FactoryGirl.attributes_for(:product, name: 'updated_product', description:'updated_product')
-        @product.reload
-        expect(@product.name).to eq('updated_product')
-
+    context 'when the product name is being updated' do
+      let (:product_name) {'updated_product'}
+          it 'changes attributes of @product' do
+            expect{subject}.to change{:product.reload.name}
+          end
       end
-
-    
     end
-
-
   end
 
   describe "DELETE #destroy" do
