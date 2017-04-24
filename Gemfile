@@ -78,3 +78,7 @@ gem 'stripe'
 gem 'dalli'
 
 gem 'redis-rails'
+
+gem 'bundler'
+
+gem 'rspec-its'

@@ -92,7 +92,7 @@ describe ProductsController, :type => :controller do
 
     context 'valid attributes' do
       let (:product_name) {FactoryGirl.attributes_for(:product)[:name]}
-      subject {put :update, id: product, product: FactoryGirl.attributes_for(:product), name: product_name)}
+      subject {put :update, id: product, product: FactoryGirl.attributes_for(:product), name: product_name}
 
       it 'located the requested @product' do
         expect(assigns(:product)).to eq(product)
